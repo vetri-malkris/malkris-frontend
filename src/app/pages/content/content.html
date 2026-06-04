@@ -1,0 +1,365 @@
+<div class="content-wrapper">
+
+  <!-- 1. SERVICES SECTION -->
+  <section id="services" class="section-container anim-section services">
+    <div class="section-header">
+      <span class="tagline">SERVICES</span>
+      <h2 class="main-title">What We Build</h2>
+    </div>
+
+    <div class="carousel-container">
+      <div class="service-display service-anim">
+
+        <div class="icon-box">
+          <i [class]="currentService().icon"></i>
+        </div>
+
+        <div class="service-content">
+          <h3>{{ currentService().title }}</h3>
+          <p>{{ currentService().desc }}</p>
+        </div>
+
+      </div>
+
+      <div class="carousel-dots">
+        <span *ngFor="let s of services; let i = index" [class.active]="i === currentServiceIndex()"
+          (click)="setService(i)"></span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 2. WHY CHOOSE US -->
+  <section class="section-container anim-section why-choose">
+
+    <!-- OUTSIDE HEADING -->
+    <div class="section-header">
+      <span class="tagline">WHY US</span>
+
+    </div>
+
+    <!-- RECTANGLE CARD -->
+    <div class="why-card">
+
+      <!-- LEFT IMAGE
+      <div class="why-graphic">
+        <img src="assets/Image2.png" alt="Why Choose Us" class="why-image">
+      </div> -->
+
+      <!-- RIGHT CONTENT -->
+      <div class="why-content">
+        <h2 class="main-title">Why Businesses Choose Us</h2>
+
+        <ul class="check-list">
+          <li><i class="fas fa-server"></i> Architected for Infinite Scale</li>
+          <li><i class="fas fa-code"></i> Engineering Without Compromise</li>
+          <li><i class="fas fa-bolt"></i> Velocity at Enterprise Precision</li>
+          <li><i class="fas fa-handshake"></i> Your Strategic Technology Partner</li>
+        </ul>
+
+        <button class="cta-btn mt-4" (click)="scrollTo('contact')">
+          Let's Build
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 3. PROCESS SECTION -->
+
+  <section class="section-container anim-section process">
+
+    <div class="section-header center">
+      <span class="tagline">PROCESS</span>
+      <h2 class="main-title">How We Work</h2>
+    </div>
+
+    <div class="process-steps">
+
+      <!-- STEP 1 -->
+      <div class="step level-1">
+        <span>
+          <i class="fas fa-search"></i>
+        </span>
+        <p>Discover</p>
+      </div>
+
+      <i class="fas fa-angles-right step-arrow"></i>
+
+      <!-- STEP 2 -->
+      <div class="step level-2">
+        <span>
+          <i class="fas fa-pen-ruler"></i>
+        </span>
+        <p>Design</p>
+      </div>
+
+      <i class="fas fa-angles-right step-arrow"></i>
+
+      <!-- STEP 3 -->
+      <div class="step level-3">
+        <span>
+          <i class="fas fa-code"></i>
+        </span>
+        <p>Develop</p>
+      </div>
+
+      <i class="fas fa-angles-right step-arrow"></i>
+
+      <!-- STEP 4 -->
+      <div class="step level-4">
+        <span>
+          <i class="fas fa-vial-circle-check"></i>
+        </span>
+        <p>Test</p>
+      </div>
+
+      <i class="fas fa-angles-right step-arrow"></i>
+
+      <!-- STEP 5 -->
+      <div class="step level-5">
+        <span>
+          <i class="fas fa-rocket"></i>
+        </span>
+        <p>Launch</p>
+      </div>
+
+      <i class="fas fa-angles-right step-arrow"></i>
+
+      <!-- STEP 6 -->
+      <div class="step level-6">
+        <span>
+          <i class="fas fa-chart-line"></i>
+        </span>
+        <p>Scale</p>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- 4. WORK (PROJECTS) SECTION -->
+  <section id="work" class="section-container anim-section projects">
+    <div class="section-header">
+      <span class="tagline">WORK</span>
+      <h2 class="main-title">Projects</h2>
+    </div>
+
+    <div class="carousel-container project-box">
+      <div class="project-split project-anim">
+
+        <div class="project-visual">
+          <i [class]="currentProject().img"></i>
+        </div>
+        <div class="project-info">
+          <span class="project-type">{{ currentProject().type }}</span>
+          <h3>{{ currentProject().title }}</h3>
+          <p>{{ currentProject().desc }}</p>
+        </div>
+      </div>
+
+      <div class="carousel-dots">
+        <span *ngFor="let p of projects; let i = index" [class.active]="i === currentProjectIndex()"
+          (click)="setProject(i)"></span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 5. CASE STUDIES -->
+  <section class="section-container anim-section case-studies">
+    <div class="section-header center">
+      <span class="tagline">CASE STUDIES</span>
+      <h2 class="main-title">Business Results That Matter</h2>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <h3>62%</h3>
+        <p>Fewer Stock Errors</p>
+      </div>
+      <div class="result-card">
+        <h3>21 Days</h3>
+        <p>MVP Launch</p>
+        
+        
+      </div>
+      <div class="result-card">
+        <h3>70%</h3>
+        <p>Less Manual Work</p>
+      </div>
+      <div class="result-card">
+        <h3>Real-Time</h3>
+        <p>Operational Visibility</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 6. TESTIMONIALS -->
+  <section class="section-container anim-section testimonials">
+    <div class="testimonial-box testimonial-anim">
+      <i class="fas fa-quote-left quote-icon"></i>
+      <h2>{{ currentTestimonial().text }}</h2>
+      <p>— {{ currentTestimonial().author }}</p>
+    </div>
+
+    <div class="carousel-controls">
+      <button type="button" class="icon-btn" aria-label="Previous testimonial" (click)="manualTestimonial('prev')"><i class="fas fa-arrow-left"></i></button>
+      <button type="button" class="icon-btn" aria-label="Next testimonial" (click)="manualTestimonial('next')"><i class="fas fa-arrow-right"></i></button>
+    </div>
+  </section>
+
+
+  <!-- 7. ABOUT SECTION -->
+  <section id="about" class="section-container anim-section about">
+    <div class="section-header center">
+      <span class="tagline">ABOUT US</span>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="image-placeholder">
+          <span></span><i class="fas fa-users"></i>
+        </div>
+      </div>
+      <div class="about-content">
+        
+        <h2 class="main-title">Rooted in Values.<br>Built for Progress.</h2>
+        <p class="formula">Engineering <span class="step-arrow">+</span> Design <span class="step-arrow">+</span> Strategy <span class="step-arrow">=</span> Sustainable Growth</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 8. BLOG / INSIGHTS -->
+  <section id="insights" class="section-container anim-section insights">
+
+  <div class="section-header">
+    <span class="tagline">BLOG</span>
+    <h2 class="main-title">Latest Insights</h2>
+  </div>
+
+  <div class="cards-grid">
+    <div
+      class="blog-card"
+      *ngFor="let blog of blogPosts"
+      (click)="openBlog(blog)"
+    >
+      <div class="card-img">
+        <i [class]="blog.icon"></i>
+      </div>
+
+      <h3 [innerHTML]="blog.title"></h3>
+    </div>
+  </div>
+
+  <div class="blog-sub">
+
+    <div class="blog-text-btn">
+      <h3>
+        Planning a SaaS platform, mobile app, or custom software project?<br>
+        Let’s discuss how to build it right from day one.
+      </h3>
+
+      <a
+        (click)="scrollTo('contact')"
+        class="cta-btn"
+        style="cursor: pointer;"
+      >
+        Book Consultation
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+  <!-- 9. FAQ -->
+  <section class="section-container anim-section faq">
+    <div class="section-header center">
+      <span class="tagline">FAQ</span>
+      <h2 class="main-title">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item" *ngFor="let faq of faqs; let i = index" (click)="toggleFaq(i)" [class.active]="openFaqIndex() === i">
+        <div class="faq-question">
+          <p>{{ openFaqIndex() === i ? '-' : '+' }} {{ faq.question }}</p>
+        </div>
+        <div class="faq-answer" *ngIf="openFaqIndex() === i">
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 10. CONTACT SECTION -->
+  <section id="contact" class="section-container anim-section contact">
+    <div class="contact-grid">
+      <div class="contact-form-box">
+        <span class="tagline">LET'S TALK</span>
+        <h2 class="main-title">Get Free Consultation</h2>
+
+        <!-- CUSTOM API INTEGRATION -->
+        <form (ngSubmit)="submitForm(contactForm)" #contactForm="ngForm" [class.show-errors]="formSubmitted">
+          <input type="text" name="name" ngModel placeholder="Name" required>
+          <input type="email" name="email" ngModel placeholder="Email" required email>
+          <input type="text" name="company" ngModel placeholder="Company">
+          <input type="text" name="budget" ngModel placeholder="Budget">
+          <textarea name="message" ngModel placeholder="Message" rows="4" required></textarea>
+          
+          <button type="submit" class="cta-btn full" [disabled]="isSubmitting">
+            {{ isSubmitting ? 'Submitting...' : 'Submit Request' }}
+          </button>
+
+          <div *ngIf="submitSuccess" style="color: #4CAF50; margin-top: 15px; font-weight: 500; text-align: center;">
+            <p>Thank you! Your request has been submitted successfully.</p>
+          </div>
+          <div *ngIf="submitError" style="color: #F44336; margin-top: 15px; font-weight: 500; text-align: center;">
+            <p>Oops! Something went wrong. Please try again later.</p>
+          </div>
+        </form>
+      </div>
+
+      <div class="contact-benefits">
+        <h3>Why partner with us?</h3>
+        <ul class="check-list">
+          <li><i class="fas fa-user-clock"></i> 24-Hour Response Time</li>
+          <li><i class="fas fa-handshake"></i> NDA Available</li>
+          <li><i class="fas fa-globe"></i> Global Delivery</li>
+          <li><i class="fas fa-code"></i> Source Code Ownership</li>
+          <li><i class="fas fa-clock"></i> Long-Term Support</li>
+          <li><i class="fas fa-network-wired"></i> Scalable Architecture</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 11. FINAL CTA -->
+  <section class="section-container anim-section final-cta">
+    <div class="cta-box">
+      <h2>Ready to Build Something Valuable?</h2>
+      <h2 class="outline-text">Got questions? <br> A wild idea?</h2>
+      <button class="cta-btn large" (click)="scrollTo('contact')">Start Project</button>
+    </div>
+  </section>
+
+  <!-- BLOG MODAL -->
+  <div class="blog-modal-overlay" *ngIf="selectedBlog()" (click)="closeBlog()">
+    <div class="blog-modal-content" (click)="$event.stopPropagation()">
+      <button class="close-btn" (click)="closeBlog()"><i class="fas fa-times"></i></button>
+      <div class="modal-header">
+        <i [class]="selectedBlog().icon"></i>
+        <h2 [innerHTML]="selectedBlog()?.title"></h2>
+      </div>
+      <div class="modal-body" [innerHTML]="selectedBlog().content"></div>
+    </div>
+  </div>
+
+</div>

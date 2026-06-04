@@ -1,0 +1,59 @@
+.home-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000;
+  overflow-x: hidden;
+}
+
+.global-bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 1; /* full visibility */
+  pointer-events: none;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .global-bg-video {
+    position: fixed;
+    display: block;
+  }
+}
+
+.global-overlay {
+  display: none;
+}
+
+.global-bg-fallback {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.scroll-container {
+  position: relative;
+  z-index: 2; /* Scrollable content stays above fixed video and overlay */
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* Will be pinned by GSAP */
+}
+
+.content-section {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  /* Content component will flow naturally here */
+}

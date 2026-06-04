@@ -1,0 +1,23 @@
+<div class="home-wrapper">
+
+  <!-- Global fixed fallback for mobile only, using WebP only -->
+  <img *ngIf="isMobile || showFallback" src="/assets/hero_fallback.webp" alt="Hero fallback background" class="global-bg-fallback" width="1001" height="1085" />
+  <video *ngIf="!isMobile" #bgVideo autoplay muted loop playsinline webkit-playsinline preload="auto" class="global-bg-video">
+    <source src="/assets/hero_compressed.mp4" type="video/mp4">
+  </video>
+  <div class="global-overlay"></div>
+
+  <!-- Scroll Container -->
+  <div class="scroll-container">
+
+    <div class="hero-section" id="home">
+      <app-hero></app-hero>
+    </div>
+
+    <div class="content-section">
+      <ng-template #contentContainer></ng-template>
+    </div>
+
+  </div>
+
+</div>

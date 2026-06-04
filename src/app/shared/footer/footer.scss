@@ -1,0 +1,261 @@
+.footer {
+  position: relative;
+  z-index: 10;
+
+  background: #111;
+  color: #fff;
+
+  padding: 6rem 5% 2rem;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4rem;
+
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-main {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-section h3,
+.footer-section h6 {
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-link-button {
+  background: none;
+  border: none;
+
+  color: inherit;
+  font: inherit;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 44px;
+}
+
+.footer-bottom {
+  padding-top: 4rem;
+
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+/* VIDEO AREA */
+
+.logo-video-box {
+  position: relative;
+
+  width: 100%;
+  height: clamp(160px, 24vw, 320px);
+
+  overflow: hidden;
+
+  background: #111;
+
+  isolation: isolate;
+
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  contain: layout paint style;
+}
+
+/* VIDEO */
+
+.logo-video-box video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 1;
+
+  display: block;
+
+  pointer-events: none;
+
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* SVG */
+
+.desktop-mask {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+/* TEXT */
+
+.malkris-svg-text {
+  font-size: clamp(40px, 15vw, 360px);
+
+  font-weight: 700;
+
+  letter-spacing: clamp(-1px, -0.4vw, -10px);
+
+  font-family: 'EleganteBC', 'Sora', sans-serif;
+}
+
+/* MOBILE SIMPLE TEXT */
+
+.mobile-logo-text {
+  display: none;
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 3;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(2rem, 12vw, 5rem);
+
+  font-weight: 700;
+
+  color: #fff;
+
+  font-family: 'EleganteBC', 'Sora', sans-serif;
+
+  letter-spacing: -2px;
+
+  pointer-events: none;
+}
+
+/* FALLBACK */
+
+.malkris-fallback {
+  position: absolute;
+  inset: 0;
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+
+  background: #111;
+
+  color: #fff;
+
+  font-size: clamp(2rem, 10vw, 5rem);
+
+  font-weight: 700;
+
+  font-family: 'EleganteBC', 'Sora', sans-serif;
+}
+
+/* LEGAL */
+
+.legal-links {
+  margin-top: 2rem;
+
+  display: flex;
+  gap: 2rem;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .footer {
+    padding: 4rem 6% 2rem;
+  }
+
+  .footer-main {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-section {
+    min-width: 100%;
+  }
+
+  .logo-video-box {
+    height: 180px;
+  }
+
+}
+
+/* iPHONE SAFARI FIX */
+
+@supports (-webkit-touch-callout: none) {
+
+  .logo-video-box {
+    height: 180px;
+  }
+
+  .desktop-mask {
+    display: none;
+  }
+
+  .mobile-logo-text {
+    display: flex;
+  }
+
+}
+
+/* iPHONE 15 / 16 */
+
+@media only screen
+and (max-width: 440px)
+and (-webkit-min-device-pixel-ratio: 3) {
+
+  .logo-video-box {
+    height: 170px;
+  }
+
+  .mobile-logo-text {
+    font-size: clamp(2rem, 13vw, 4rem);
+  }
+
+}

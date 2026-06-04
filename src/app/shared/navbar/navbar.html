@@ -1,0 +1,127 @@
+<header
+  class="nav-shell"
+  [class.hide]="isHidden()"
+  [class.scrolled]="scrollY() > 20"
+>
+
+  <nav class="nav-wrap">
+
+    <!-- LOGO -->
+    <a
+      class="brand"
+      href="#home"
+      (click)="scrollTo('home'); $event.preventDefault()"
+      style="cursor:pointer;"
+    >
+      MALKRIS
+    </a>
+
+    <!-- DESKTOP MENU -->
+    <ul class="desktop-links">
+
+      <li>
+        <a href="#services"
+           (click)="scrollTo('services'); $event.preventDefault()">
+          Services
+        </a>
+      </li>
+
+      <li>
+        <a href="#work"
+           (click)="scrollTo('work'); $event.preventDefault()">
+          Work
+        </a>
+      </li>
+
+      <li>
+        <a href="#about"
+           (click)="scrollTo('about'); $event.preventDefault()">
+          About
+        </a>
+      </li>
+
+      <li>
+        <a href="#insights"
+           (click)="scrollTo('insights'); $event.preventDefault()">
+          Insights
+        </a>
+      </li>
+
+      <li>
+        <a href="#contact"
+           (click)="scrollTo('contact'); $event.preventDefault()">
+          Contact
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- RIGHT -->
+    <div class="nav-right">
+
+      <a
+        href="#contact"
+        (click)="scrollTo('contact'); $event.preventDefault()"
+        class="cta-btn"
+      >
+        Book Consultation
+      </a>
+
+      <button
+        class="menu-btn"
+        [class.active]="isMenuOpen()"
+        (click)="toggleMenu()"
+        aria-label="menu"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" [class.open]="isMenuOpen()">
+
+    <a href="#home"
+       (click)="scrollTo('home'); $event.preventDefault()">
+      Home
+    </a>
+
+    <a href="#services"
+       (click)="scrollTo('services'); $event.preventDefault()">
+      Services
+    </a>
+
+    <a href="#work"
+       (click)="scrollTo('work'); $event.preventDefault()">
+      Work
+    </a>
+
+    <a href="#about"
+       (click)="scrollTo('about'); $event.preventDefault()">
+      About
+    </a>
+
+    <a href="#insights"
+       (click)="scrollTo('insights'); $event.preventDefault()">
+      Insights
+    </a>
+
+    <a href="#contact"
+       (click)="scrollTo('contact'); $event.preventDefault()">
+      Contact
+    </a>
+
+    <a
+      href="#contact"
+      (click)="scrollTo('contact'); $event.preventDefault()"
+      class="mobile-cta"
+    >
+      Book Consultation
+    </a>
+
+  </div>
+
+</header>
